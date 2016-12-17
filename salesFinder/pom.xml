@@ -23,9 +23,13 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
+        <test.file></test.file>
+        <config.file>default</config.file>
+
         <testng.version>6.8</testng.version>
         <selenium.version>2.52.0</selenium.version>
         <chrome.driver.location>/chromedriver.exe</chrome.driver.location>
+        <suiteXmlFile>src/ui_tests/java/com/example/suite/simpleSuite.xml</suiteXmlFile>
     </properties>
 
     <dependencies>
@@ -69,7 +73,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -96,6 +99,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <propertyName>propertyValue</propertyName>
+                        <webdriver.chrome.driver>${chrome.driver.location}</webdriver.chrome.driver>
+                        <buildDirectory>${project.build.directory}</buildDirectory>
+                    </systemPropertyVariables>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
 
         </plugins>
