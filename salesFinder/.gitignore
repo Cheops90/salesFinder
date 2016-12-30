@@ -1,0 +1,9 @@
+*.class
+.idea/
+*.iml
+target/
+*.log
+*/nb-configuration.xml
+*/src/main/webapp/META-INF/context.xml
+*.log.1
+test-output

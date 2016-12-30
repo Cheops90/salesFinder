@@ -2,7 +2,7 @@ package com.example.tests;
 
 
 import com.example.pageobjects.HomePage;
-import implementation.SalesResultsListener;
+import implementation.config.SalesResultsListener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import static org.junit.Assert.assertTrue;

@@ -1,4 +1,4 @@
-package implementation;
+package implementation.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +19,7 @@ public class ScheduledTasks {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
     // Schedule for the top of every hour of every day.
+    // ToDo Move Cron value in properties file.
     @Scheduled(cron = "0 0 * * * *")
     public void reportCurrentTime() {
         log.info("The time is now {}, run tests!", dateFormat.format(new Date()));
